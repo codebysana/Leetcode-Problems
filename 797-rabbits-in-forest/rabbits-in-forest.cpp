@@ -8,9 +8,9 @@ public:
         }
 
         int count = 0;
-        for(const auto& [r, v] : freq){
-            int groupSize = r + 1;
-            int groups = (r + v) / groupSize;
+        for(auto& [num, k] : freq){
+            int groupSize = num + 1;
+            int groups = (num + k) / groupSize;
             count += groups * groupSize;
         }
         return count;
