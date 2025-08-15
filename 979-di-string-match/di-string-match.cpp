@@ -3,16 +3,16 @@ public:
     vector<int> diStringMatch(string s) {
         int n = s.size();
         int low = 0, high = n;
-        vector<int> ans(n + 1);
+        vector<int> ans;
 
         for(int i = 0; i < n; i++){
             if(s[i] == 'I'){
-                ans[i] = low++;
+                ans.push_back(low++);
             }else{
-                ans[i] = high--;
+                ans.push_back(high--);
             }
         }
-        ans[n] = low;
+        ans.push_back(low);
         return ans;
     }
 };
